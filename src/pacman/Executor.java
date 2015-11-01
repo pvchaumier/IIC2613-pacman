@@ -55,11 +55,11 @@ public class Executor
 
 		// TODO: pick your controller
 		// Controller<MOVE> pacmanController = new StarterPacMan();
-		// Controller<MOVE> pacmanController = new MyPacMan();
-		Controller<MOVE> pacmanController = new HumanController(new KeyBoardInput());
+		Controller<MOVE> pacmanController = new MyPacMan();
+		// Controller<MOVE> pacmanController = new HumanController(new KeyBoardInput());
 
-		Controller<EnumMap<GHOST,MOVE>> ghostController = new StarterGhosts();
-		// Controller<EnumMap<GHOST,MOVE>> ghostController = new MyGhosts();
+		// Controller<EnumMap<GHOST,MOVE>> ghostController = new StarterGhosts();
+		Controller<EnumMap<GHOST,MOVE>> ghostController = new MyGhosts();
 
 		exec.runGameTimed(pacmanController, ghostController, visual);
 

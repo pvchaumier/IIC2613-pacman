@@ -26,16 +26,19 @@ public class MyPacMan extends Controller<MOVE>
 		MOVE bestMove = myMove;
 		int best = Integer.MIN_VALUE;
 		
+		System.out.println("###########");
+		
 		for(MOVE move : game.getPossibleMoves(game.getPacmanCurrentNodeIndex()))
 		{
 			int radioAfraid = 0;
 			int radioNotAfraid = 100;
 			int radioPill = 0;
-			System.out.println(evaluationFunction(game, move, radioAfraid, radioNotAfraid, radioPill));
-			if(best < evaluationFunction(game, move, radioAfraid, radioNotAfraid, radioPill))
+			int moveEvaluation = evaluationFunction(game, move, radioAfraid, radioNotAfraid, radioPill);
+			System.out.println(moveEvaluation);
+			if(best < moveEvaluation)
 			{
 				bestMove = move;
-				best = evaluationFunction(game, move, radioAfraid, radioNotAfraid, radioPill);
+				best = moveEvaluation;
 			}
 		}
 		
@@ -48,7 +51,6 @@ public class MyPacMan extends Controller<MOVE>
 		int result = 0;
 		int pacman_old = game.getPacmanCurrentNodeIndex();
 		int pacman = game.getNeighbour(pacman_old, move);
-		//System.out.println(pacman_old + " " + pacman);
 		
 		//get all active pills
 		int[] activePills=game.getActivePillsIndices();
@@ -56,6 +58,8 @@ public class MyPacMan extends Controller<MOVE>
 		//get all active power pills
 		// int[] activePowerPills=game.getActivePowerPillsIndices();
 				
+		System.out.println(move);
+		
 		for(GHOST ghost : GHOST.values())
 		{
 			if(game.doesGhostRequireAction(ghost))	
@@ -69,7 +73,7 @@ public class MyPacMan extends Controller<MOVE>
 				}
 				else
 				{
-					System.out.println("Shortest Distance" + game.getShortestPathDistance(pacman, game.getGhostCurrentNodeIndex(ghost)));
+					System.out.println("Shortest Distance " + game.getShortestPathDistance(pacman, game.getGhostCurrentNodeIndex(ghost)));
 					if(game.getShortestPathDistance(pacman, game.getGhostCurrentNodeIndex(ghost)) < radioNotAfraid)
 					{
 						result -= 1000 * (radioNotAfraid - game.getShortestPathDistance(pacman, game.getGhostCurrentNodeIndex(ghost)));

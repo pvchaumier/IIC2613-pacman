@@ -37,7 +37,7 @@ public final class NearestPillPacManVS extends Controller<MOVE>
 		int nearest = game.getClosestNodeIndexFromNodeIndex(currentNodeIndex,targetNodeIndices,DM.PATH);
 				
 		//add the path that Ms Pac-Man is following
-//		GameView.addPoints(game,Color.GREEN,game.getShortestPath(game.getPacmanCurrentNodeIndex(),nearest));
+		GameView.addPoints(game,Color.GREEN,game.getShortestPath(game.getPacmanCurrentNodeIndex(),nearest));
 		
 		//add the path from Ms Pac-Man to the first power pill
 //		GameView.addPoints(game,Color.CYAN,game.getShortestPath(game.getPacmanCurrentNodeIndex(),game.getPowerPillIndices()[0]));

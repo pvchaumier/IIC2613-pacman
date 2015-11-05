@@ -2,6 +2,7 @@ package pacman;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -42,8 +43,9 @@ public class Executor
 	 * The main method. Several options are listed - simply remove comments to use the option you want.
 	 *
 	 * @param args the command line arguments
+	 * @throws FileNotFoundException 
 	 */
-	public static void main(String[] args)
+	public static void main(String[] args) throws FileNotFoundException
 	{
 		Executor exec=new Executor();
 		
@@ -59,7 +61,7 @@ public class Executor
 		// Controller<MOVE> pacmanController = new NearestPillPacManVS();
 		// Controller<MOVE> pacmanController = new HumanController(new KeyBoardInput());
 
-		Controller<EnumMap<GHOST,MOVE>> ghostController = new StarterGhosts();
+		Controller<EnumMap<GHOST,MOVE>> ghostController = new MyGhosts();
 		// Controller<EnumMap<GHOST,MOVE>> ghostController = new AggressiveGhosts();
 		// Controller<EnumMap<GHOST,MOVE>> ghostController = new MyGhosts();
 
@@ -106,6 +108,7 @@ public class Executor
     	
     	Random rnd=new Random(0);
 		Game game;
+		
 		
 		for(int i=0;i<trials;i++)
 		{

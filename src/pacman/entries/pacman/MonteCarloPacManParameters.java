@@ -89,7 +89,7 @@ public class MonteCarloPacManParameters
 	/**
 	 * True if the decision graph is to be shown.
 	 */
-	public boolean showGraph;
+	//public boolean showGraph;
 	
 	/**
 	 * True if the positions of ghosts is to be taken into account.
@@ -107,24 +107,23 @@ public class MonteCarloPacManParameters
 	/**
 	 * Constructor.  Sets default values for the parameters.
 	 */
-	public MonteCarloPacManParameters()
-	{
-		/*nodeExpansionThreshold = 30;
+	public MonteCarloPacManParameters(){
+		nodeExpansionThreshold = 15;
 		maximumSimulationLength = 10000000;
 		deathPenalty = 10000;
 		scaleDeathPenalty = false;
 		completionReward = 10000;
-		pacManModel = new StarterPacMan();
-		ghostModel = new RandomGhosts();
+		pacManModel = new ElMejorControladorDeLaHistoria();
+		ghostModel = new StarterGhosts();
 		selectionPolicy = new LevineUcbSelectionPolicy(4000);
 		additionalEvaluators = new ITreeEvaluator[] { new DistanceToOpportunityEvaluator(), new PowerPillDistanceEvaluator(), new PowerPillActiveEvaluator() };
 		discardTreeOnDecision = true;
-		opponent = new Legacy();
+		opponent = new StarterGhosts();
 		simulationCount = -1;
-		showGraph = false;
+		//showGraph = false;
 		useGhostPositions = true;
 		eatGhostNode = true;
-		*/
+		/*
 		nodeExpansionThreshold = 50;
 		maximumSimulationLength = 10000000;
 		deathPenalty = 10000;
@@ -139,7 +138,7 @@ public class MonteCarloPacManParameters
 		simulationCount = -1;
 		showGraph = false;
 		useGhostPositions = true;
-		eatGhostNode = false;
+		eatGhostNode = true;*/
 	}
 	
 	
@@ -163,7 +162,7 @@ public class MonteCarloPacManParameters
 		p.additionalEvaluators = additionalEvaluators;
 		p.discardTreeOnDecision = discardTreeOnDecision;
 		p.experimentName = experimentName;
-		p.opponent = opponent.getClass().newInstance();
+		//p.opponent = opponent.getClass().newInstance();
 		return p;
 	}
 }

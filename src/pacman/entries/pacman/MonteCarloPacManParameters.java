@@ -3,7 +3,6 @@ package pacman.entries.pacman;
 import java.util.EnumMap;
 
 import pacman.controllers.Controller;
-import pacman.controllers.examples.Legacy;
 import pacman.controllers.examples.*;
 import pacman.entries.ghosts.*;
 import pacman.entries.pacman.*;
@@ -110,13 +109,13 @@ public class MonteCarloPacManParameters
 	 */
 	public MonteCarloPacManParameters()
 	{
-		nodeExpansionThreshold = 30;
+		/*nodeExpansionThreshold = 30;
 		maximumSimulationLength = 10000000;
 		deathPenalty = 10000;
 		scaleDeathPenalty = false;
 		completionReward = 10000;
 		pacManModel = new StarterPacMan();
-		ghostModel = new MyGhosts();
+		ghostModel = new RandomGhosts();
 		selectionPolicy = new LevineUcbSelectionPolicy(4000);
 		additionalEvaluators = new ITreeEvaluator[] { new DistanceToOpportunityEvaluator(), new PowerPillDistanceEvaluator(), new PowerPillActiveEvaluator() };
 		discardTreeOnDecision = true;
@@ -125,13 +124,13 @@ public class MonteCarloPacManParameters
 		showGraph = false;
 		useGhostPositions = true;
 		eatGhostNode = true;
-		
-		/*nodeExpansionThreshold = 50;
+		*/
+		nodeExpansionThreshold = 50;
 		maximumSimulationLength = 10000000;
 		deathPenalty = 10000;
 		scaleDeathPenalty = false;
 		completionReward = 10000;
-		pacManModel = new StarterPacMan();
+		pacManModel = new ElMejorControladorDeLaHistoria();
 		ghostModel = new Legacy2TheReckoning();
 		selectionPolicy = new LevineUcbSelectionPolicy(4000);
 		additionalEvaluators = new ITreeEvaluator[] { new DistanceToOpportunityEvaluator(), new PowerPillDistanceEvaluator(), new PowerPillActiveEvaluator() };
@@ -140,7 +139,7 @@ public class MonteCarloPacManParameters
 		simulationCount = -1;
 		showGraph = false;
 		useGhostPositions = true;
-		eatGhostNode = false;*/
+		eatGhostNode = false;
 	}
 	
 	

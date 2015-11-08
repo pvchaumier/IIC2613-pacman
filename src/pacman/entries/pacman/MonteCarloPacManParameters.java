@@ -114,7 +114,7 @@ public class MonteCarloPacManParameters
 		scaleDeathPenalty = false;
 		completionReward = 10000;
 		pacManModel = new ElMejorControladorDeLaHistoria();
-		ghostModel = new StarterGhosts();
+		ghostModel = new Legacy2TheReckoning();
 		selectionPolicy = new LevineUcbSelectionPolicy(4000);
 		additionalEvaluators = new ITreeEvaluator[] { new DistanceToOpportunityEvaluator(), new PowerPillDistanceEvaluator(), new PowerPillActiveEvaluator() };
 		discardTreeOnDecision = true;

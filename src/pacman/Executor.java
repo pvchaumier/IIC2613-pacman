@@ -59,9 +59,9 @@ public class Executor
 		// Controller<MOVE> pacmanController = new NearestPillPacManVS();
 		// Controller<MOVE> pacmanController = new HumanController(new KeyBoardInput());
 
-		Controller<EnumMap<GHOST,MOVE>> ghostController = new StarterGhosts();
+		// Controller<EnumMap<GHOST,MOVE>> ghostController = new StarterGhosts();
 		// Controller<EnumMap<GHOST,MOVE>> ghostController = new AggressiveGhosts();
-		// Controller<EnumMap<GHOST,MOVE>> ghostController = new MyGhosts();
+		Controller<EnumMap<GHOST,MOVE>> ghostController = new MyGhosts();
 
 		exec.runGameTimed(pacmanController, ghostController, visual);
 
